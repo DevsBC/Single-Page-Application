@@ -70,11 +70,13 @@ export class HeroesService {
     searchHeroes(text:string) {
       let heroesArr:Heroe[] = [];
       text = text.toLowerCase();
-      
-      for(let heroe of this.heroes) {
+      let length = this.heroes.length;
+      for(let i = 0; i < length; i++) {
+        let heroe = this.heroes[i];
         let name = heroe.nombre.toLowerCase(); 
 
         if(name.indexOf(text) >= 0) {
+          heroe.id = i;
           heroesArr.push(heroe);
         } 
 
@@ -89,4 +91,5 @@ export interface Heroe {
     img: string,
     aparicion: string,
     casa: string
+    id?: number
 }

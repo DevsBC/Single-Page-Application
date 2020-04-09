@@ -20,7 +20,7 @@ export class HeroeCardComponent implements OnInit {
   }
 
   verHeroe() {
-    //this.router.navigate(['/heroe', this.id]);
-    this.selectedHeroe.emit(this.id);
+    this.router.navigate(['/heroe', this.id]);
+    //this.selectedHeroe.emit(this.id);
   }
 }
