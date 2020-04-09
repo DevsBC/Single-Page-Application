@@ -1,0 +1,14 @@
+<h1>Buscando: <small>{{ searchText }}</small></h1>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-warning" role="alert">
+            No existen resultados para: {{ searchText }}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <app-heroe-card [heroe]="heroe" [id]="id" *ngFor="let heroe of heroes; let id = index;"></app-heroe-card>
+
+</div>
